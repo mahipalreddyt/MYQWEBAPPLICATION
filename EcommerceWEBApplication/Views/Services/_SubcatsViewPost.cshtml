@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Components.ResponseObjects.ServiceSubCategory>
+
+  
+    <ul>
+        @foreach (var v in Model)
+        {
+       
+            <li><a href="#" onclick="SelectedData(@v.SubCategoryId,'@v.SubCategoryName')">@v.SubCategoryName</a></li>
+       
+            
+
+        }
+    </ul>
+
+<script>
+    function SelectedData(id,Name) {
+        $('#SelectedSubCategory').html(Name);
+        $("#SubCategoryIdPost").val(id);
+        $("#SelectedSubCategoryName").val(Name); 
+    }
+</script>
+
+

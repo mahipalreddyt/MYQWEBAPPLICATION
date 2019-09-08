@@ -1,0 +1,11 @@
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\Utilities\bin\Debug\Utilities.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\Utilities\bin\Debug\Utilities.pdb
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\Utilities\obj\Debug\Utilities.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\Utilities\obj\Debug\Utilities.pdb
+E:\mahipal\SVSApps\SVS\Ecommerce17thaugust\GitHubRepos\UI\MyQShopsWeb\Utilities\bin\Debug\Utilities.dll
+E:\mahipal\SVSApps\SVS\Ecommerce17thaugust\GitHubRepos\UI\MyQShopsWeb\Utilities\bin\Debug\Utilities.pdb
+E:\mahipal\SVSApps\SVS\Ecommerce17thaugust\GitHubRepos\UI\MyQShopsWeb\Utilities\obj\Debug\Utilities.csprojAssemblyReference.cache
+E:\mahipal\SVSApps\SVS\Ecommerce17thaugust\GitHubRepos\UI\MyQShopsWeb\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+E:\mahipal\SVSApps\SVS\Ecommerce17thaugust\GitHubRepos\UI\MyQShopsWeb\Utilities\obj\Debug\Utilities.dll
+E:\mahipal\SVSApps\SVS\Ecommerce17thaugust\GitHubRepos\UI\MyQShopsWeb\Utilities\obj\Debug\Utilities.pdb

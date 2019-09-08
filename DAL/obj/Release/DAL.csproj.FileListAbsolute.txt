@@ -1,0 +1,13 @@
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\DAL\bin\Release\DAL.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\DAL\bin\Release\DAL.pdb
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\DAL\bin\Release\Components.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\DAL\bin\Release\Newtonsoft.Json.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\DAL\bin\Release\Utilities.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\DAL\bin\Release\Components.pdb
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\DAL\bin\Release\Utilities.pdb
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\DAL\bin\Release\Newtonsoft.Json.xml
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\DAL\obj\Release\DAL.csprojAssemblyReference.cache
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\DAL\obj\Release\DAL.csproj.CoreCompileInputs.cache
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\DAL\obj\Release\DAL.csproj.CopyComplete
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\DAL\obj\Release\DAL.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\DAL\obj\Release\DAL.pdb

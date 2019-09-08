@@ -1,0 +1,15 @@
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\BAL\bin\Release\BAL.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\BAL\bin\Release\BAL.pdb
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\BAL\bin\Release\Components.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\BAL\bin\Release\DAL.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\BAL\bin\Release\Utilities.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\BAL\bin\Release\Newtonsoft.Json.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\BAL\bin\Release\Components.pdb
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\BAL\bin\Release\DAL.pdb
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\BAL\bin\Release\Utilities.pdb
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\BAL\bin\Release\Newtonsoft.Json.xml
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\BAL\obj\Release\BAL.csprojAssemblyReference.cache
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\BAL\obj\Release\BAL.csproj.CoreCompileInputs.cache
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\BAL\obj\Release\BAL.csproj.CopyComplete
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\BAL\obj\Release\BAL.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\BAL\obj\Release\BAL.pdb

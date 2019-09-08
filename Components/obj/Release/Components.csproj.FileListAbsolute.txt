@@ -1,0 +1,9 @@
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\Components\bin\Release\Components.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\Components\bin\Release\Components.pdb
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\Components\bin\Release\Utilities.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\Components\bin\Release\Utilities.pdb
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\Components\obj\Release\Components.csprojAssemblyReference.cache
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\Components\obj\Release\Components.csproj.CoreCompileInputs.cache
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\Components\obj\Release\Components.csproj.CopyComplete
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\Components\obj\Release\Components.dll
+E:\SVS\Ecommerce17thaugust\EcommerceWEBApplication\Components\obj\Release\Components.pdb

@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "PostService";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<script>
+    $(document).ready(function () {
+        $('#ServiceForm').submit(function (e) {
+            var catid = $("#CategoryIdPost").val();
+            var subcatid = $("#SubCategoryIdPost").val();
+            if (!(catid > 0) || !(subcatid > 0)) {
+                $('#notSelectederror').html('Select Category and Subcategory to move forward');
+                e.preventDefault();
+            }
+            
+        });
+
+    });
+    function GetSubCats(id,name)
+    {
+        $('#SelectedCategory').html(name);
+        $("#CategoryIdPost").val(id);
+        $("#SelectedCategoryName").val(name);
+        var url = '/Services/GetSucategories';
+        $.get(url, { id: id })
+            .done(function (response) {
+                $('#SubCategoryResult').html(response);
+            });
+    }
+</script>
+<section id="main" class="clearfix ad-post-page">
+    <div class="container">
+
+        <div class="breadcrumb-section">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Ad Post</li>
+            </ol><!-- breadcrumb -->
+            <h2 class="title">Post Free Ad</h2>
+        </div><!-- banner -->
+
+
+
+        <div id="ad-post">
+            @using (Html.BeginForm("FinalPost", "Services", FormMethod.Get, new { @id="ServiceForm"}))
+            {
+                <div class="row category-tab">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="section cat-option select-category post-option">
+                            <h4>Select a Category</h4>
+                            <ul role="tablist" class="nav nav-tabs">
+                                @foreach (var cat in ViewBag.ServiceDrop)
+                                {
+                                    <li>
+                                        <a href="#" aria-controls="cat1" role="tab" data-toggle="tab" onclick="GetSubCats(@cat.CategoryId,'@cat.CategoryName')">
+                                            @*<span class="select">
+                                            <img src="~/Resources/images/icon/@cat.CategoryImage" alt="Images" class="img-">
+                                        </span>*@
+                                            @cat.CategoryName
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tab panes -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="section tab-content subcategory post-option">
+                            <h4>Select a Subcategory</h4>
+                            @*<div role="tabpanel" class="tab-pane active show" id="cat1">*@
+                            <div id="SubCategoryResult">
+
+                                @*</div>*@
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="section next-stap post-option">
+                            <h2>You have selcted</h2>
+                            <p>Category -> <span id="SelectedCategory" style="color:darkblue;" name="SelectedCategory"></span></p>
+                            <p>Sub Category -> <span id="SelectedSubCategory" name="SelectedSubCategory"></span></p>
+                            <div class="btn-section">
+                                <input type="hidden" name="CategoryIdPost" id="CategoryIdPost" />
+                                <input type="hidden" name="SelectedCategoryName" id="SelectedCategoryName" />
+                                <input type="hidden" name="SelectedSubCategoryName" id="SelectedSubCategoryName" />
+                                <input type="hidden" name="SubCategoryIdPost" id="SubCategoryIdPost" />
+                                <button type="submit" class="btn btn-success">Next</button>
+                                
+                                <a href="~/Home/Index" class="btn-info">or Cancel</a>
+                                <span class="text-danger" id="notSelectederror"></span>
+                            </div>
+                        </div>
+                    </div><!-- next-stap -->
+                </div>
+            }
+
+            <div class="row">
+                <div class="col-sm-8 offset-sm-2 text-center">
+                    <div class="ad-section">
+                        <a href="#"><img src="~/Resources/images/ads/3.jpg" alt="Image" class="img-fluid"></a>
+                    </div>
+                </div>
+            </div><!-- row -->
+        </div>
+    </div><!-- container -->
+</section><!-- post-page -->

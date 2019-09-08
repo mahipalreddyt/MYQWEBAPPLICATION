@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6402d28b95e242099ac3dc879f8b79a6" Name="Diagram1">
+        <EntityTypeShape EntityType="MyQShopsModel.AclRecord" Width="1.5" PointX="5.25" PointY="54.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ActivityLog" Width="1.5" PointX="6" PointY="50.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ActivityLogType" Width="1.5" PointX="3.75" PointY="63.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Address" Width="1.5" PointX="3.75" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.AddressAttribute" Width="1.5" PointX="10.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.AddressAttributeValue" Width="1.5" PointX="13" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.AddTypeMaster" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Affiliate" Width="1.5" PointX="6" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.BackInStockSubscription" Width="1.5" PointX="3" PointY="47.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.BlogComment" Width="1.5" PointX="8" PointY="54.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.BlogPost" Width="1.5" PointX="5.75" PointY="67.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Campaign" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Category" Width="1.5" PointX="1.5" PointY="92" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.CategoryTemplate" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.CheckoutAttribute" Width="1.5" PointX="5.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.CheckoutAttributeValue" Width="1.5" PointX="8" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.CityMaster" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Country" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.CountryMaster" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.CrossSellProduct" Width="1.5" PointX="2.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Currency" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Customer" Width="1.5" PointX="0.75" PointY="49.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.CustomerAddress" Width="1.5" PointX="6" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.CustomerAttribute" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.CustomerAttributeValue" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.CustomerPassword" Width="1.5" PointX="3" PointY="51.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.CustomerRole" Width="1.5" PointX="3" PointY="55.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.DeliveryDate" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Discount" Width="1.5" PointX="1.5" PointY="85.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.DiscountRequirement" Width="1.5" PointX="3.75" PointY="97.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.DiscountUsageHistory" Width="1.5" PointX="7.5" PointY="81.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Download" Width="1.5" PointX="15.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.EmailAccount" Width="1.5" PointX="10.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ExternalAuthenticationRecord" Width="1.5" PointX="3" PointY="60.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Forums_Forum" Width="1.5" PointX="6.75" PointY="39.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Forums_Group" Width="1.5" PointX="4.5" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Forums_Post" Width="1.5" PointX="9" PointY="50.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Forums_PostVote" Width="1.5" PointX="11.25" PointY="50.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Forums_PrivateMessage" Width="1.5" PointX="3" PointY="67.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Forums_Subscription" Width="1.5" PointX="3" PointY="71.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Forums_Topic" Width="1.5" PointX="9" PointY="44.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.GdprConsent" Width="1.5" PointX="15.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.GdprLog" Width="1.5" PointX="7.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.GenericAttribute" Width="1.5" PointX="9.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.GiftCard" Width="1.5" PointX="12.75" PointY="76.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.GiftCardUsageHistory" Width="1.5" PointX="10.5" PointY="82.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Language" Width="1.5" PointX="1.5" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.LocaleStringResource" Width="1.5" PointX="3.75" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.LocalizedProperty" Width="1.5" PointX="3.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Log" Width="1.5" PointX="3" PointY="79.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Manufacturer" Width="1.5" PointX="3.75" PointY="119.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ManufacturerTemplate" Width="1.5" PointX="11.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.MeasureDimension" Width="1.5" PointX="16.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.MeasureWeight" Width="1.5" PointX="13.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.MessageTemplate" Width="1.5" PointX="16.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.News" Width="1.5" PointX="3.75" PointY="91.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.NewsComment" Width="1.5" PointX="6" PointY="60.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.NewsLetterSubscription" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.OpeningDay" Width="1.5" PointX="17.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Order" Width="1.5" PointX="5.25" PointY="76.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.OrderItem" Width="1.5" PointX="10.5" PointY="75.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.OrderNote" Width="1.5" PointX="7.5" PointY="84.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.PermissionRecord" Width="1.5" PointX="5.25" PointY="57.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Picture" Width="1.5" PointX="3.75" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.PictureBinary" Width="1.5" PointX="6" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Poll" Width="1.5" PointX="1.5" PointY="40.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.PollAnswer" Width="1.5" PointX="0.75" PointY="44.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.PollVotingRecord" Width="1.5" PointX="3" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.PredefinedProductAttributeValue" Width="1.5" PointX="8" PointY="104.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Product" Width="1.5" PointX="0.75" PointY="59.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Product_Category_Mapping" Width="1.5" PointX="10.75" PointY="72.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Product_Manufacturer_Mapping" Width="1.5" PointX="8" PointY="89.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Product_Picture_Mapping" Width="1.5" PointX="6" PointY="72.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Product_ProductAttribute_Mapping" Width="1.5" PointX="8" PointY="67.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Product_SpecificationAttribute_Mapping" Width="1.5" PointX="8" PointY="76.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ProductAttribute" Width="1.5" PointX="5.75" PointY="104.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ProductAttributeCombination" Width="1.5" PointX="3" PointY="74.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ProductAttributeValue" Width="1.5" PointX="10.25" PointY="85.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ProductAvailabilityRange" Width="1.5" PointX="17.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ProductReview" Width="1.5" PointX="11" PointY="54.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ProductReview_ReviewType_Mapping" Width="1.5" PointX="13.25" PointY="55.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ProductReviewHelpfulness" Width="1.5" PointX="13.25" PointY="58.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ProductTag" Width="1.5" PointX="3" PointY="102" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ProductTemplate" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ProductWarehouseInventory" Width="1.5" PointX="8" PointY="64.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.QueuedEmail" Width="1.5" PointX="13" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.RecurringPayment" Width="1.5" PointX="7.5" PointY="93.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.RecurringPaymentHistory" Width="1.5" PointX="9.75" PointY="94.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.RelatedProduct" Width="1.5" PointX="18.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ReturnRequest" Width="1.5" PointX="3" PointY="109.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ReturnRequestAction" Width="1.5" PointX="9.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ReturnRequestReason" Width="1.5" PointX="18.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ReviewType" Width="1.5" PointX="11" PointY="64.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.RewardPointsHistory" Width="1.5" PointX="3" PointY="114.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ScheduleTask" Width="1.5" PointX="18.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.SearchTerm" Width="1.5" PointX="15.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ServiceAdMaster" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ServiceCategory" Width="1.5" PointX="5.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ServiceImage" Width="1.5" PointX="11.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ServiceReview" Width="1.5" PointX="17.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ServiceSecificationsPosted" Width="1.5" PointX="19.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ServiceSpecification" Width="1.5" PointX="20.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Setting" Width="1.5" PointX="20.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Shipment" Width="1.5" PointX="7.5" PointY="97.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ShipmentItem" Width="1.5" PointX="9.75" PointY="98.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ShippingMethod" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ShoppingCartItem" Width="1.5" PointX="11" PointY="60" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.SpecificationAttribute" Width="1.5" PointX="3.5" PointY="126" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.SpecificationAttributeOption" Width="1.5" PointX="5.75" PointY="125.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.StateMaster" Width="1.5" PointX="20.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.StateProvince" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.StockQuantityHistory" Width="1.5" PointX="3" PointY="104.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Store" Width="1.5" PointX="5.75" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.StoreMapping" Width="1.5" PointX="8" PointY="30.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.TaxCategory" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.TierPrice" Width="1.5" PointX="8.25" PointY="58.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Topic" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.TopicTemplate" Width="1.5" PointX="21.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.UrlRecord" Width="1.5" PointX="21.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Vendor" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.VendorAttribute" Width="1.5" PointX="5.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.VendorAttributeValue" Width="1.5" PointX="8" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.VendorNote" Width="1.5" PointX="8" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.Warehouse" Width="1.5" PointX="5.75" PointY="101.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyQShopsModel.ServiceSubcategory" Width="1.5" PointX="7.75" PointY="21.75" IsExpanded="true" />
+        <AssociationConnector Association="MyQShopsModel.FK_AclRecord_CustomerRole_CustomerRoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ActivityLog_ActivityLogType_ActivityLogTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ActivityLog_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Affiliate_Address_AddressId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_CustomerAddresses_Address_Address_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Order_Address_BillingAddressId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Order_Address_PickupAddressId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Order_Address_ShippingAddressId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_AddressAttributeValue_AddressAttribute_AddressAttributeId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_BackInStockSubscription_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_BackInStockSubscription_Product_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_BlogComment_BlogPost_BlogPostId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_BlogComment_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_BlogComment_Store_StoreId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_BlogPost_Language_LanguageId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Product_Category_Mapping_Category_CategoryId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_CheckoutAttributeValue_CheckoutAttribute_CheckoutAttributeId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_StateProvince_Country_CountryId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_CustomerAddresses_Customer_Customer_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_CustomerPassword_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ExternalAuthenticationRecord_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Forums_Post_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Forums_PrivateMessage_Customer_FromCustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Forums_PrivateMessage_Customer_ToCustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Forums_Subscription_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Forums_Topic_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Log_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_NewsComment_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Order_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_PollVotingRecord_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ProductReview_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ReturnRequest_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_RewardPointsHistory_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ShoppingCartItem_Customer_CustomerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_CustomerAttributeValue_CustomerAttribute_CustomerAttributeId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_TierPrice_CustomerRole_CustomerRoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_DiscountRequirement_Discount_DiscountId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_DiscountUsageHistory_Discount_DiscountId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_DiscountRequirement_DiscountRequirement_ParentId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_DiscountUsageHistory_Order_OrderId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_QueuedEmail_EmailAccount_EmailAccountId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Forums_Forum_Forums_Group_ForumGroupId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Forums_Topic_Forums_Forum_ForumId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Forums_Post_Forums_Topic_TopicId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Forums_PostVote_Forums_Post_ForumPostId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_GiftCard_OrderItem_PurchasedWithOrderItemId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_GiftCardUsageHistory_GiftCard_GiftCardId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_GiftCardUsageHistory_Order_UsedWithOrderId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_LocaleStringResource_Language_LanguageId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_LocalizedProperty_Language_LanguageId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_News_Language_LanguageId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Poll_Language_LanguageId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Product_Manufacturer_Mapping_Manufacturer_ManufacturerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_NewsComment_News_NewsItemId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_NewsComment_Store_StoreId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Order_RewardPointsHistory_RewardPointsHistoryEntryId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_OrderItem_Order_OrderId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_OrderNote_Order_OrderId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_RecurringPayment_Order_InitialOrderId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Shipment_Order_OrderId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_OrderItem_Product_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_PictureBinary_Picture_PictureId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Product_Picture_Mapping_Picture_PictureId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_PollAnswer_Poll_PollId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_PollVotingRecord_PollAnswer_PollAnswerId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_PredefinedProductAttributeValue_ProductAttribute_ProductAttributeId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Product_Category_Mapping_Product_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Product_Manufacturer_Mapping_Product_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Product_Picture_Mapping_Product_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Product_ProductAttribute_Mapping_Product_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Product_SpecificationAttribute_Mapping_Product_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ProductAttributeCombination_Product_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ProductReview_Product_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ProductWarehouseInventory_Product_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ShoppingCartItem_Product_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_StockQuantityHistory_Product_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_TierPrice_Product_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Product_ProductAttribute_Mapping_ProductAttribute_ProductAttributeId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ProductAttributeValue_Product_ProductAttribute_Mapping_ProductAttributeMappingId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_Product_SpecificationAttribute_Mapping_SpecificationAttributeOption_SpecificationAttributeOptionId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ProductReview_ReviewType_Mapping_ProductReview_ProductReviewId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ProductReview_Store_StoreId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ProductReviewHelpfulness_ProductReview_ProductReviewId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ProductReview_ReviewType_Mapping_ReviewType_ReviewTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ProductWarehouseInventory_Warehouse_WarehouseId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_RecurringPaymentHistory_RecurringPayment_RecurringPaymentId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_ShipmentItem_Shipment_ShipmentId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_SpecificationAttributeOption_SpecificationAttribute_SpecificationAttributeId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_StoreMapping_Store_StoreId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_VendorNote_Vendor_VendorId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.FK_VendorAttributeValue_VendorAttribute_VendorAttributeId" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.Customer_CustomerRole_Mapping" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.Discount_AppliedToCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.Discount_AppliedToManufacturers" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.Discount_AppliedToProducts" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.PermissionRecord_Role_Mapping" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.Product_ProductTag_Mapping" ManuallyRouted="false" />
+        <AssociationConnector Association="MyQShopsModel.ShippingMethodRestrictions" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

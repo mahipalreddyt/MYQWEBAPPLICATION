@@ -1,0 +1,432 @@
+﻿@model Components.RequestObjects.YPServicePostRequest
+@{
+    ViewBag.Title = "FinalPost";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<script>
+    function previewImages() {
+
+        var $preview = $('#preview').empty();
+        if (this.files) $.each(this.files, readAndPreview);
+
+        function readAndPreview(i, file) {
+
+            if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+                return alert(file.name + " is not an image");
+            } // else...
+
+            var reader = new FileReader();
+
+            $(reader).on("load", function () {
+                $preview.append($("<img/>", { src: this.result, height: 100 }));
+            });
+
+            reader.readAsDataURL(file);
+
+        }
+
+    }
+
+   
+
+    $(document).ready(function () {
+        $('#adImages').on("change", previewImages);
+        $("#CoverPhoto").change(function () {
+            readURL(this);
+        });
+
+        $('#ServiceForm').submit(function (e) {
+            var isFormValidated = true;
+            var fi = document.getElementById('mainImage');
+            if (fi == null) {
+                isFormValidated = false;
+                $('#CoverImageError').html('Cover Image is mandatory');
+            }
+            if (!fi.files.length > 0) {
+                isFormValidated = false;
+                $('#CoverImageError').html('Cover Image is mandatory');
+            }
+            else {
+                $('#CoverImageError').html('');
+            }
+
+            if (isFormValidated == false) {
+               
+                e.preventDefault();
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var countryHome = $('#CoutryIdSelected').val();
+        if (countryHome > 0) {
+            $('#CountryId').val(countryHome);
+        }
+        var stateData = $('#StateIdSelected').val();
+        if (stateData > 0) {
+            $('#StateiId').val(stateData);
+        }
+        GetStates();
+    });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    function GetStates() {
+        var countryId = $('#CountryId option:selected').val();
+        var stateData = $('#StateIdSelected').val();
+        $.ajax({
+            url: '/Common/GetStatesByCountry?id=' + countryId,
+            data: {},
+            type: 'post',
+            success: function (result) {
+                var res = result.res;
+                $('#StateId').empty();
+                for (var i = 0; i < res.length; i++) {
+                    if (stateData > 0 && stateData == res[i].StateId) {
+                        $('#StateId').append('<option value="' + res[i].StateId + '" selected>' + res[i].StateName + '</option>');
+                    }
+                    else {
+                        $('#StateId').append('<option value="' + res[i].StateId + '">' + res[i].StateName + '</option>');
+                    }
+
+                }
+                GetCities();
+
+
+            }
+        });
+    }
+
+    function GetCities() {
+        var stateid = $('#StateId option:selected').val();
+        var cityHome = $('#CityIdSelected').val();
+
+        $.ajax({
+            url: '/Common/GetCitiesByState?id=' + stateid,
+            data: {},
+            type: 'post',
+            success: function (result) {
+                var res = result.res;
+                $('#CityId').empty();
+                for (var i = 0; i < res.length; i++) {
+                    if (cityHome > 0 && res[i].CityName == cityHome) {
+                        $('#CityId').append('<option value="' + res[i].CityName + '" selected>' + res[i].CityName + '</option>');
+                    }
+                    else {
+                        $('#CityId').append('<option value="' + res[i].CityId + '">' + res[i].CityName + '</option>');
+                    }
+
+
+                }
+
+            }
+        });
+    }
+
+
+</script>
+<section id="main" class="clearfix ad-details-page">
+    <div class="container">
+
+        <div class="breadcrumb-section">
+            <!-- breadcrumb -->
+            <ol class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Posting Service Ad</li>
+            </ol><!-- breadcrumb -->
+            <h2 class="title">@(ViewBag.CategoryName  + "->" + @ViewBag.SubcategoryName)</h2>
+        </div><!-- banner -->
+
+        <div class="adpost-details">
+            <div class="row">
+                <div class="col-lg-8">
+                    @using (Html.BeginForm("FinalPost", "Services", FormMethod.Post, new { @enctype = "multipart/form-data", @id="ServiceForm" }))
+                    {
+                    <fieldset>
+                        <div class="section postdetails">
+                            <h4>Post service information<span class="pull-right">* Mandatory Fields</span></h4>
+                            <div class="form-group selected-product">
+                                <ul class="select-category list-inline">
+                                    <li>
+                                        <a href="ad-post.html">
+                                            <span class="select">
+                                                @*<img src="images/icon/2.png" alt="Images" class="img-fluid">*@
+                                            </span>
+                                            @ViewBag.CategoryName
+                                        </a>
+                                    </li>
+
+                                    <li class="active">
+                                        <a href="ad-post-details.html#">@ViewBag.SubcategoryName</a>
+                                    </li>
+                                </ul>
+                                @*<a class="edit" href="ad-post-details.html#"><i class="fa fa-pencil"></i>Edit</a>*@
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-3">Type of ad<span class="required">*</span></label>
+                                <div class="col-sm-9 user-type">
+                                    @Html.DropDownList("AddTypeId", null, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="row form-group add-title">
+                                <label class="col-sm-3 label-title">Title for your Ad<span class="required">*</span></label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.AdTitle, new { @class = "form-control", @placeholder = "Enter title here" })
+                                    @Html.ValidationMessageFor(m => m.AdTitle, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row form-group item-description">
+                                <label class="col-sm-3 label-title">Description (Maximum 2000 Characters)<span class="required">*</span></label>
+                                <div class="col-sm-9">
+                                    @Html.TextAreaFor(m => m.AboutTheCompany, new { @id = "textarea", @placeholder = "Write few lines about your products", @rows = "8", @class = "form-control" })
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-9 offset-sm-3">
+                                    <p><span id="descriptionCont">2000</span> characters left</p>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-3">Country<span class="required">*</span></label>
+                                <div class="col-sm-6 user-type">
+                                    @Html.DropDownList("CountryId", null, new { @class = "form-control", @id = "CountryId", @onchange = "GetStates()", @onclick = "GetStates()" })
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-3">State<span class="required">*</span></label>
+                                <div class="col-sm-6 user-type">
+                                    <select id="StateId" class="form-control" name="StateId" onchange="GetCities()" onclick="GetCities()">
+                                        <option value="">-- Select State --</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-3">City<span class="required">*</span></label>
+                                <div class="col-sm-6 user-type">
+                                    <select id="CityId" class="form-control" name="CityId">
+                                        <option value="">-- Select City --</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group add-title">
+                                <label class="col-sm-3 label-title">Other City (If not found in the list)</label>
+                                <div class="col-sm-5">
+                                    @Html.TextBoxFor(m => m.OtherCity, new { @class = "form-control", @placeholder = "Enter city here (if not found in the list)" })
+                                    @Html.ValidationMessageFor(m => m.OtherCity, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row form-group add-title">
+                                <label class="col-sm-3 label-title">Founded year</label>
+                                <div class="col-sm-5">
+                                    @Html.TextBoxFor(m => m.FoundedYear, new { @class = "form-control", @placeholder = "Enter title here" })
+                                    @Html.ValidationMessageFor(m => m.FoundedYear, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="row form-group model-name">
+                                <label class="col-sm-3 label-title">Number of employes</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.NoOfEmployees, new { @class = "form-control", @placeholder = "Number of Employees, like 9, 100+, >100" })
+                                    @Html.ValidationMessageFor(m => m.NoOfEmployees, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-3">Working Days<span class="required">*</span></label>
+                                <div class="col-sm-9 user-type">
+                                    @Html.DropDownList("OpeningDayId", null, new { @class = "form-control" })
+                                </div>
+                            </div>
+
+
+                        </div><!-- section -->
+
+                        <div class="section seller-info">
+                            <h4>Personal/Company Information</h4>
+
+                            <div class="row form-group">
+                                <label class="col-sm-3 label-title">Contact Person Name<span class="required">*</span></label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.ContactPerson, new { @class = "form-control", @placeholder = "Contact person name" })
+                                    @Html.ValidationMessageFor(m => m.ContactPerson, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-3 label-title">Email ID<span class="required">*</span></label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.EmailId, new { @class = "form-control", @placeholder = "Email Id" })
+                                    @Html.ValidationMessageFor(m => m.EmailId, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-3 label-title">Mobile Number<span class="required">*</span></label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.ContactNumber, new { @class = "form-control", @placeholder = "Email Id" })
+                                    @Html.ValidationMessageFor(m => m.ContactNumber, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-3 label-title">Business Address<span class="required">*</span></label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.BusinessAddress, new { @class = "form-control", @placeholder = "Business Address" })
+                                    @Html.ValidationMessageFor(m => m.BusinessAddress, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <label class="col-sm-3 label-title">Other Locations</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.Location, new { @class = "form-control", @placeholder = "Other locations.. i.e., Wellington Street, PG Road" })
+                                    @Html.ValidationMessageFor(m => m.Location, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div><!-- section -->
+
+                        <div class="section">
+
+
+                            <h4>Social Network Links </h4>
+                            <div class="row form-group model-name">
+                                <label class="col-sm-3 label-title">Google Map Link</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.googleMapLink, new { @class = "form-control", @placeholder = "Paste your google map link" })
+                                    @Html.ValidationMessageFor(m => m.googleMapLink, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row form-group model-name">
+                                <label class="col-sm-3 label-title">Facebook Link</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.FaceBookLink, new { @class = "form-control", @placeholder = "Paste your facebook link" })
+                                    @Html.ValidationMessageFor(m => m.FaceBookLink, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row form-group model-name">
+                                <label class="col-sm-3 label-title">Twitter Link</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.twitterLink, new { @class = "form-control", @placeholder = "Paste your twitter # tag link" })
+                                    @Html.ValidationMessageFor(m => m.twitterLink, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row form-group model-name">
+                                <label class="col-sm-3 label-title">Google Plus</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.googlePlusLink, new { @class = "form-control", @placeholder = "Paste your Google Plus link" })
+                                    @Html.ValidationMessageFor(m => m.googlePlusLink, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row form-group add-image">
+                                <label class="col-sm-3 label-title">
+                                    Cover photo
+                                </label>
+                                <div class="col-sm-9">
+                                    <div class="upload-section">
+
+                                        <input type="file" name="coverPhoto" id="CoverPhoto">
+
+                                        <img id="blah" src="#" alt="your image" width="120px;" />
+                                    </div>
+                                    <span id="CoverImageError" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row form-group add-image">
+                                <label class="col-sm-3 label-title">
+                                    Other photos
+                                </label>
+                                <div class="col-sm-9">
+                                    <div class="upload-section">
+                                        <input type="file" name="adImages" id="adImages" multiple>
+                                        <div id="preview"></div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="row form-group model-name">
+                                
+                                <div class="col-sm-9">
+                                    <div class="form-group">
+                                        <input type="checkbox" checked disabled>
+                                        I/We here by agreeing the terms and conditions of MyQShops.com for posting my Ad/Service.
+                                    </div>
+                                    
+
+                                </div>
+                            </div>
+                        </div><!-- section -->
+
+                         
+
+                        <div class="checkbox section agreement">
+                            
+                               
+                            @*<button type="submit" class="btn btn-primary">Post Your Ad</button>*@
+
+
+
+
+                            <input type="hidden" value="@ViewBag.CategoryId" name="CategoryId" id="CategoryId" />
+                            <input type="hidden" value="@ViewBag.SubcategoryId" name="SubcategoryId" id="SubcategoryId" />
+                            <input type="hidden" value="@ViewBag.CountryIdSelected" name="CoutryIdSelected" id="CoutryIdSelected" />
+                            <input type="hidden" value="@ViewBag.StateIdSelected" name="StateIdSelected" id="StateIdSelected" />
+                            <input type="hidden" value="@ViewBag.CityIdSelected" name="CityIdSelected" id="CityIdSelected" />
+                            <input type="hidden" value="@ViewBag.SelectedCategoryName" name="SelectedCategoryName" id="SelectedCategoryName" />
+                            <input type="hidden" value="@ViewBag.SelectedSubCategoryName" name="SelectedSubCategoryName" id="SelectedSubCategoryName" />
+                            <button type="submit" class="btn btn-primary">Post your ad</button>
+
+                        </div><!-- section -->
+
+                    </fieldset>
+                                   }
+                    
+                </div>
+
+
+                <!-- quick-rules -->
+                <div class="col-lg-4">
+                    <div class="section quick-rules">
+                        <h4>Quick rules</h4>
+                        <p class="lead">Posting an ad on <a href="ad-post-details.html#">MyQShops.com</a> is free! However, all ads must follow our rules:</p>
+
+                        <ul>
+                            <li>Make sure you post in the correct category.</li>
+                            <li>Do not post the same ad more than once or repost an ad within 48 hours.</li>
+                            <li>Do not upload pictures with watermarks.</li>
+                            <li>Do not post ads containing multiple items unless it's a package deal.</li>
+                            <li>Do not put your email or phone numbers in the title or description.</li>
+                            <li>Make sure you post in the correct category.</li>
+                            <li>Do not post the same ad more than once or repost an ad within 48 hours.</li>
+                            <li>Do not upload pictures with watermarks.</li>
+                            <li>Do not post ads containing multiple items unless it's a package deal.</li>
+                        </ul>
+                    </div>
+                </div><!-- quick-rules -->
+            </div><!-- photos-ad -->
+        </div>
+    </div><!-- container -->
+</section><!-- main -->

@@ -1,0 +1,216 @@
+﻿@model Components.RequestObjects.CustomerSaveRequest
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<script>
+    $(document).ready(function () {
+        var countryHome = $('#CoutryIdSelected').val();
+        if (countryHome > 0) {
+            $('#CountryId').val(countryHome);
+        }
+        var stateData = $('#StateIdSelected').val();
+        if (stateData > 0) {
+            $('#StateiId').val(stateData);
+        }
+        GetStates();
+    });
+    $("input[type=checkbox]").change(function () {
+        if ($(this).prop("checked")) {
+            $(this).val(true);
+        } else {
+            $(this).val(false);
+        }
+    });
+
+    function GetStates() {
+        var countryId = $('#CountryId option:selected').val();
+        var stateData = $('#StateIdSelected').val();
+        $.ajax({
+            url: '/Common/GetStatesByCountry?id=' + countryId,
+            data: {},
+            type: 'post',
+            success: function (result) {
+                var res = result.res;
+                $('#StateId').empty();
+                for (var i = 0; i < res.length; i++) {
+                    if (stateData > 0 && stateData == res[i].StateId) {
+                        $('#StateId').append('<option value="' + res[i].StateId + '" selected>' + res[i].StateName + '</option>');
+                    }
+                    else {
+                        $('#StateId').append('<option value="' + res[i].StateId + '">' + res[i].StateName + '</option>');
+                    }
+
+                }
+                GetCities();
+
+
+            }
+        });
+    }
+
+    function GetCities() {
+        var stateid = $('#StateId option:selected').val();
+        var cityHome = $('#CityIdSelected').val();
+
+        $.ajax({
+            url: '/Common/GetCitiesByState?id=' + stateid,
+            data: {},
+            type: 'post',
+            success: function (result) {
+                var res = result.res;
+                $('#CityId').empty();
+                for (var i = 0; i < res.length; i++) {
+                    if (cityHome > 0 && res[i].CityName == cityHome) {
+                        $('#CityId').append('<option value="' + res[i].CityName + '" selected>' + res[i].CityName + '</option>');
+                    }
+                    else {
+                        $('#CityId').append('<option value="' + res[i].CityName + '">' + res[i].CityName + '</option>');
+                    }
+
+
+                }
+
+            }
+        });
+    }
+</script>
+<section id="main" class="clearfix user-page">
+    <div class="container">
+        <div class="row text-center">
+            <!-- user-login -->
+            <div class="col-md-12 col-lg-12">
+                <div class="user-account">
+                    <h2>Create a MyQShop Account</h2>
+                    @using (Html.BeginForm("Register", "Authenticate", FormMethod.Post))
+                    {
+                        <div class="col-lg-12 col-md-12">
+                            <div class="row">
+
+
+                                <div class="form-group col-md-3">
+                                    <label style="text-align:left;">
+                                        First Name
+                                    </label>
+                                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @placeholder = "Fist Name" })
+                                    @Html.ValidationMessageFor(m => m.FirstName, null, new { @class = "text-danger" })
+
+                                </div>
+                                <div class="form-group col-lg-3">
+                                    <label style="text-align:left;"> Last Name</label>
+                                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @placeholder = "Last Name" })
+                                    @Html.ValidationMessageFor(m => m.LastName, null, new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label style="text-align:left;"> Email</label>
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email id" })
+                                    @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label style="text-align:left;"> Contact Number</label>
+                                    @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @placeholder = "Contact Number" })
+                                    @Html.ValidationMessageFor(m => m.PhoneNumber, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <div class="row">
+
+
+                                <div class="form-group col-md-3">
+                                    <label style="text-align:left;">
+                                        Password
+                                    </label>
+                                    @Html.PasswordFor(m => m.password, new { @class = "form-control", @placeholder = "Password" })
+                                    @Html.ValidationMessageFor(m => m.password, null, new { @class = "text-danger" })
+
+                                </div>
+                                <div class="form-group col-lg-3">
+                                    <label style="text-align:left;"> Confirm Password</label>
+                                    @Html.PasswordFor(m => m.cnfpassword, new { @class = "form-control", @placeholder = "Confirm Password" })
+                                    @Html.ValidationMessageFor(m => m.cnfpassword, null, new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label style="text-align:left;">Country</label>
+                                    <select class="form-control" name="CountryId" id="CountryId" onchange="GetStates()">
+                                        @foreach (var v in ViewBag.CountryId)
+                                        {
+                                            <option value="@v.CountryId">@v.CountryName</option>
+                                        }
+                                    </select>
+                                    @Html.ValidationMessageFor(m => m.CountryId, null, new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label style="text-align:left;">State</label>
+                                    <select id="StateId" name="StateProviceId" class="form-control" onchange="GetCities()" onclick="GetCities()">
+                                        <option value="null">-- Select State --</option>
+                                    </select>
+                                    @Html.ValidationMessageFor(m => m.StateProvinceId, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="row">
+                                <div class="form-group col-md-3">
+                                    <label style="text-align:left;">City</label>
+                                    <select class="form-control" name="City" id="CityId">
+                                        <option value=""></option>
+                                    </select>
+                                    @Html.ValidationMessageFor(m => m.City, null, new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label style="text-align:left;">
+                                        H.No/Street
+                                    </label>
+                                    @Html.TextBoxFor(m => m.Address1, new { @class = "form-control", @placeholder = "H.No/Street" })
+                                    @Html.ValidationMessageFor(m => m.Address1, null, new { @class = "text-danger" })
+
+                                </div>
+                                <div class="form-group col-lg-3">
+                                    <label style="text-align:left;">Location/Locality/County</label>
+                                    @Html.TextBoxFor(m => m.Address2, new { @class = "form-control", @placeholder = "Location/Locality/County" })
+                                    @Html.ValidationMessageFor(m => m.Address2, null, new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group col-lg-3">
+                                    <label style="text-align:left;">Postal Code</label>
+                                    @Html.TextBoxFor(m => m.ZipPostalCode, new { @class = "form-control", @placeholder = "Postal zip code" })
+                                    @Html.ValidationMessageFor(m => m.ZipPostalCode, null, new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label style="text-align:left;">Registraton Type</label>
+                                    <select id="CustomerType" name="CustomerType" class="form-control">
+                                        <option value="Customer">Customer</option>
+                                        <option value="Vendor">Vendor</option>
+                                        <option value="Marketing">Marketing</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+
+                      
+
+
+
+                        <div class="checkbox">
+                            <label class="pull-left checked" for="signing"><input type="checkbox" name="signing" id="signing"> By signing up for an account you agree to our Terms and Conditions </label>
+                        </div><!-- checkbox -->
+                        <input type="hidden" id ="CountryIdSelected" name="CountryIdSelected" value="@ViewBag.CountryIdSelected" />
+                        <input type="hidden" id="CityIdSelected" name="CityIdSelected" value="@ViewBag.CityIdSelected" />
+                        <input type="hidden" id="StateIdSelected" name="StateIdSelected" value="@ViewBag.StateIdSelected" />
+                        <button type="submit"  class="btn">Save</button>
+                        <span class="text-danger">@ViewBag.ErrorMessage</span>
+
+                    }
+
+                    <!-- checkbox -->
+
+                </div>
+                    </div><!-- user-login -->
+        </div><!-- row -->
+    </div><!-- container -->
+</section><!-- signup-page -->

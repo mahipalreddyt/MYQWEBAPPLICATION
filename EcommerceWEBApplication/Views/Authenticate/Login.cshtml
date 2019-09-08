@@ -1,0 +1,48 @@
+﻿@model Components.RequestObjects.LoginRequest
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+
+<section id="main" class="clearfix user-page">
+    <div class="container">
+        <div class="row text-center">
+            <!-- user-login -->
+            <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                <div class="user-account">
+                    <h2>User Login</h2>
+                    <!-- form -->
+                    @using (Html.BeginForm("Login", "Authenticate", FormMethod.Post))
+                    {
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="emailId" placeholder="Username">
+                            @Html.ValidationMessageFor(b => b.emailId, null, new { @class = "text-danger"})
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="pword" class="form-control" placeholder="Password">
+                            @Html.ValidationMessageFor(b => b.pword, null, new { @class = "text-danger" })
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                        <input type="hidden" value="@ViewBag.returnUrl" id="returnUrl" name="returnUrl"/>
+                        <br />
+                        <sapn class="text-danger">@ViewBag.ErrorMessage</sapn>
+
+                    }
+
+
+
+                    <!-- form -->
+                    <!-- forgot-password -->
+                    <div class="user-option">
+                       
+                        <div class="pull-right forgot-password">
+                            <a href="#">Forgot password</a>
+                        </div>
+                    </div><!-- forgot-password -->
+                </div>
+                <a href="~/Authenticate/Registration" class="btn-primary">Create a New Account</a>
+            </div><!-- user-login -->
+        </div><!-- row -->
+    </div><!-- container -->
+</section><!-- signin-page -->
